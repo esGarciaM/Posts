@@ -37,7 +37,10 @@ namespace Data
         }
         public void Update(T item)
         {
-            _entity.Attach(item);
+            //_entity.Attach(item);
+            //_dbContext.SaveChanges();
+            T uitem = Get(item.Id);
+            _dbContext.Entry(uitem).CurrentValues.SetValues(item);
             _dbContext.SaveChanges();
         }
     }

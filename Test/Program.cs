@@ -8,14 +8,21 @@ using Microsoft.EntityFrameworkCore;
 Context context = new Context();
 
 ICRUD<Post> crud = new CRUD<Post>(context);
-
+/*
 Post p = crud.Get(2);
 
-p.title = "---------Titulo Actualizdo";
+p.title = "---------Titulo Actualizdo_______________________________________________";
+Console.WriteLine(p.title);
 p.userid = 2;
 p.body = "----------Cuerpo del post Actualizado";
 
-crud.Update(p);
+crud.Update(p);*/
+Post px = new Post();
+
+px.body = "CUERPO";
+//crud.Add(px);
+
+
 //crud.Add(p);
 
 
