@@ -18,9 +18,18 @@ namespace Entities
         protected override void OnModelCreating(ModelBuilder model) {
             model.Entity<Post>().HasKey("Id");
             model.Entity<User>().HasKey("Id");
+
+            model.Entity<Vacante>().HasKey("Id");
+            model.Entity<Prospecto>().HasKey("Id");
+            model.Entity<Entrevista>().HasKey("Id");
+
         }
         public DbSet<Post> Posts { get; set;}
         public DbSet<User> Users { get; set;}
-        
+        public DbSet<Vacante> VACANTE { get; set; }
+        public DbSet<Entrevista> ENTREVISTA{ get; set; }
+        public DbSet<Prospecto> PROSPECTO{ get; set; }
+
+
     }
 }
