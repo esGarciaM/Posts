@@ -19,8 +19,8 @@ namespace API.Controllers
         {
             return View();
         }
-        [HttpGet("user/get/{id?}")]
-        public IActionResult get(int id = 0)
+        [HttpGet("user/{id}")]
+        public IActionResult get(int id)
         {
             if (id == 0) return BadRequest("No userId provided");
             User usuario = _crud.Get(id);
@@ -32,7 +32,7 @@ namespace API.Controllers
             _crud.Add(userData);
             return Ok("Ok??");
         }
-        [HttpPost("user/update")]
+        [HttpPut("user/update")]
         public IActionResult edit([FromBody] User userData)
         {
             _crud.Update(userData);
@@ -46,7 +46,8 @@ namespace API.Controllers
         {
             return Ok("Not implemented!!");
         }
-        public IActionResult remove()
+        [HttpDelete("user/{id?}")]
+        public IActionResult remove(int id)
         {
             return Ok("Not implemented!!");
         }
