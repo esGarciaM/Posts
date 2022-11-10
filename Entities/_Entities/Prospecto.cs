@@ -10,7 +10,7 @@ namespace Entities._Entities
 {
     public class Prospecto:EntityBase
     {
-        public int id { get; set; }
+        //public int id { get; set; }
         [Required]
         [StringLength(50)]
         public string nombre{ get; set; }

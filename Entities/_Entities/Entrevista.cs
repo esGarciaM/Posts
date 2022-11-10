@@ -10,7 +10,7 @@ namespace Entities._Entities
 {
     public class Entrevista:EntityBase
     {
-        public int? id { get; set; }
+        //public int? id { get; set; }
         public int vacante { get; set; }
         public int prospecto { get; set; }
         public DateTime? fecha_entrevista { get; set; }  

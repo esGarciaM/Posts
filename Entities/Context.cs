@@ -13,7 +13,8 @@ namespace Entities
     public class Context : DbContext,IContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseSqlServer("server=localhost;database=minipost;user=sa;password=AFS2018;");
+            //options.UseSqlServer("server=localhost;database=minipost;user=sa;password=AFS2018;");
+            options.UseSqlServer("server=108.178.119.50;database=entrevista;user=sa;password=AFS3112.*;");
         }
         protected override void OnModelCreating(ModelBuilder model) {
             model.Entity<Post>().HasKey("Id");
