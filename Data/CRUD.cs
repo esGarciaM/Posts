@@ -1,14 +1,16 @@
 ﻿using Data.Interface;
+using Entities;
 using Entities._Class;
+using Entities._Interface;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data
 {
     public class CRUD<T> : ICRUD<T> where T : EntityBase
     {
-        private readonly DbContext _dbContext;
+        private readonly Context _dbContext;
         private readonly DbSet<T> _entity;
-        public CRUD(DbContext context)
+        public CRUD(Context context)
         {
             _dbContext = context;
             _entity = _dbContext.Set<T>();
