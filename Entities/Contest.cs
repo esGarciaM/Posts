@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Context : DbContext,IContext
+    public class Contest : DbContext ,IContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            //options.UseSqlServer("server=localhost;database=minipost;user=sa;password=AFS2018;");
-            options.UseSqlServer("server=108.178.119.50;database=entrevista;user=sa;password=AFS3112.*;");
+            options.UseSqlServer("server=localhost;database=entrevista;user=sa;password=AFS2018;");
+            //options.UseSqlServer("server=108.178.119.50;database=entrevista;user=sa;password=AFS3112.*;");
         }
         protected override void OnModelCreating(ModelBuilder model) {
             model.Entity<Post>().HasKey("id");
@@ -25,11 +25,12 @@ namespace Entities
             model.Entity<Entrevista>().HasKey("id");
 
         }
-        public DbSet<Post> Posts { get; set;}
-        public DbSet<User> Users { get; set;}
+
         public DbSet<Vacante> VACANTE { get; set; }
         public DbSet<Entrevista> ENTREVISTA{ get; set; }
         public DbSet<Prospecto> PROSPECTO{ get; set; }
+        public DbSet<Post> Posts { get; set; }
+        public DbSet<User> Users { get; set; }
         public DbContext Instance => this;
     }
 }

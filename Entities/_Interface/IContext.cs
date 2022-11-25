@@ -9,9 +9,15 @@ using System.Threading.Tasks;
 
 namespace Entities._Interface
 {
-    public interface IContext
+    public interface IContext:IDisposable
     {
         public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Vacante> VACANTE { get; set; }
+        public DbSet<Entrevista> ENTREVISTA { get; set; }
+        public DbSet<Prospecto> PROSPECTO { get; set; }
+        DbContext Instance { get; }
+        public int SaveChanges();
+
     }
 }

@@ -1,4 +1,5 @@
 using Entities;
+using Entities._Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins"; 
@@ -7,9 +8,8 @@ builder.Services.AddCors(options => {
     options.AddPolicy(name: MyAllowSpecificOrigins,policy =>{policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();});
 });
 
-//Context context = new Context();
 //Add services to the container.
-builder.Services.AddSingleton<Context>();
+builder.Services.AddSingleton<IContext, Contest>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

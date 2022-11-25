@@ -10,10 +10,9 @@ namespace Entities._Entities
 {
     public class Vacante:EntityBase
     {
-        public int vacante { get; set; }
-        [StringLength(50)]
+        //public int vacante { get; set; }
         public string? area{ get; set; }
-        public double? sueldo { get; set; }
+        public decimal? sueldo { get; set; }
         public bool? activo { get; set; }
     }
 }

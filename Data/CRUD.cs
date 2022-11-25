@@ -8,13 +8,13 @@ namespace Data
 {
     public class CRUD<T> : ICRUD<T> where T : EntityBase
     {
-        private readonly Context _dbContext;
+        private readonly IContext _dbContext;
         private readonly DbSet<T> _entity;
-        public CRUD(Context context)
+        public CRUD(IContext context)
         {
             _dbContext = context;
-            _entity = _dbContext.Set<T>();
-
+            _entity = _dbContext.Instance.Set<T>();
+            //_entity = _dbContext.Set<T>();
         }
         public void Add(T item)
         {
@@ -29,21 +29,33 @@ namespace Data
         {
             T item = this.Get(id);
             _entity.Remove(item);
+            _dbContext.SaveChanges();
         }
         public T Get(int id)
         {
-            /*T item = _entity.FirstOrDefault(x => x.Id == id);
-            return item;*/
-            T item = _entity.Find(id);
+            T item = _entity.FirstOrDefault(x => x.id == id);
             return item;
+            /*T item = _entity.Find(id);
+            return item;*/
         }
         public void Update(T item)
         {
-            //_entity.Attach(item);
+            _entity.Attach(item);
             //_dbContext.SaveChanges();
-            T uitem = Get(item.Id);
-            _dbContext.Entry(uitem).CurrentValues.SetValues(item);
+            /*T uitem = Get(item.Id);
+            _dbContext.Entry(uitem).CurrentValues.SetValues(item);*/
             _dbContext.SaveChanges();
+        }
+        public T getLast() { 
+            return _entity.Last(); ;
+        }
+        public IEnumerable<T> Where(string w)
+        {
+            return _entity.FromSqlRaw(w).ToList();
+            //return _entity.Where(x => x.id == w);
+            //T item = _entity.FirstOrDefault(x => x.id == id);
+            //return item;
+            
         }
     }
 }

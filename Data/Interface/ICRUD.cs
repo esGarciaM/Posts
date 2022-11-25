@@ -14,5 +14,6 @@ namespace Data.Interface
         public void Add(T item);
         public void Update(T item);
         public void Delete(int id);
+        public IEnumerable<T> Where(string w);
     }
 }

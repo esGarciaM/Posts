@@ -2,6 +2,7 @@
 using Data.Interface;
 using Entities;
 using Entities._Entities;
+using Entities._Interface;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
@@ -11,7 +12,7 @@ namespace API.Controllers
     public class ProspectoController : Controller
     {
         private ICRUD<Prospecto> _crud;
-        public ProspectoController([FromServices] Context c) {
+        public ProspectoController([FromServices] IContext c) {
             
             
             //Context c = new Context();
