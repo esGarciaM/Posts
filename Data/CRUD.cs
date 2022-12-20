@@ -14,40 +14,46 @@ namespace Data
         {
             _dbContext = context;
             _entity = _dbContext.Instance.Set<T>();
-            //_entity = _dbContext.Set<T>();
         }
-        public void Add(T item)
+        public int Add(T item)
         {
             _entity.Add(item);
             _dbContext.SaveChanges();
+            int id = item.id;
+            return id;
         }
         public IEnumerable<T> All()
         {
             return _entity.ToList();
         }
-        public void Delete(int id)
+        public bool Delete(int id)
         {
             T item = this.Get(id);
-            _entity.Remove(item);
-            _dbContext.SaveChanges();
+            if (item != null)
+            {
+                _entity.Remove(item);
+                _dbContext.SaveChanges();
+            }
+            if(this.Get(id) == null) return true;
+            return false;
         }
         public T Get(int id)
         {
             T item = _entity.FirstOrDefault(x => x.id == id);
             return item;
-            /*T item = _entity.Find(id);
-            return item;*/
         }
-        public void Update(T item)
+        public bool Update(T item)
         {
             _entity.Attach(item);
-            //_dbContext.SaveChanges();
-            /*T uitem = Get(item.Id);
-            _dbContext.Entry(uitem).CurrentValues.SetValues(item);*/
             _dbContext.SaveChanges();
+            return true;
         }
         public T getLast() { 
             return _entity.Last(); ;
+        }
+        public IEnumerable<T> getRange(int from, int to)
+        {
+            return _entity.Where(x => x.id >= from).Where(x=> x.id >= to);
         }
         public IEnumerable<T> Where(string w)
         {
@@ -55,7 +61,9 @@ namespace Data
             //return _entity.Where(x => x.id == w);
             //T item = _entity.FirstOrDefault(x => x.id == id);
             //return item;
-            
+        }
+        public DbSet<T> GetEntity() {
+            return _entity;
         }
     }
 }

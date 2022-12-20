@@ -1,4 +1,5 @@
 C:\DMNS521\dotnet\Posts\Entities\bin\Debug\net6.0\Entities.deps.json
+C:\DMNS521\dotnet\Posts\Entities\bin\Debug\net6.0\Entities.runtimeconfig.json
 C:\DMNS521\dotnet\Posts\Entities\bin\Debug\net6.0\Entities.dll
 C:\DMNS521\dotnet\Posts\Entities\bin\Debug\net6.0\Entities.pdb
 C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\Entities.csproj.AssemblyReference.cache
@@ -9,6 +10,5 @@ C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\Entities.csproj.CoreCompileInp
 C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\Entities.dll
 C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\refint\Entities.dll
 C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\Entities.pdb
-C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\ref\Entities.dll
-C:\DMNS521\dotnet\Posts\Entities\bin\Debug\net6.0\Entities.runtimeconfig.json
 C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\Entities.genruntimeconfig.cache
+C:\DMNS521\dotnet\Posts\Entities\obj\Debug\net6.0\ref\Entities.dll

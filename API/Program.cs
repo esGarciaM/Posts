@@ -9,7 +9,7 @@ builder.Services.AddCors(options => {
 });
 
 //Add services to the container.
-builder.Services.AddSingleton<IContext, Contest>();
+builder.Services.AddSingleton<IContext, Context>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

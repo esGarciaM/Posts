@@ -11,11 +11,10 @@ namespace Entities._Interface
 {
     public interface IContext:IDisposable
     {
-        public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<Vacante> VACANTE { get; set; }
-        public DbSet<Entrevista> ENTREVISTA { get; set; }
-        public DbSet<Prospecto> PROSPECTO { get; set; }
+        public DbSet<Client> Clients{ get; set; }
+        public DbSet<Provider> Providers{ get; set; }
+        public DbSet<Product> Products { get; set; }
         DbContext Instance { get; }
         public int SaveChanges();
 

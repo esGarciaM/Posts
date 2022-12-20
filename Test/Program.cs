@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 
 
-
+/*
  void test1()
 {
     Console.WriteLine("test1 OK!");
@@ -43,7 +43,7 @@ ICRUD<Prospecto> cprospecto = new CRUD<Prospecto>(context);
 ICRUD<Vacante> cvacante= new CRUD<Vacante>(context);
 
 
-Prospecto p = new Prospecto();
+Prospecto p = new Prospecto();*/
 /*
 p.id = 1;
 //cprospecto.Add(p);
@@ -55,7 +55,7 @@ cprospecto.Update(p);
 
 cprospecto.Delete(1);*/
 
-var data = cprospecto.Where("truncate table PROSPECTO");
+//var data = cprospecto.Where("truncate table PROSPECTO");
 
 /*
 Vacante v = new Vacante();
@@ -85,7 +85,7 @@ p.userid = 2;
 p.body = "----------Cuerpo del post Actualizado";
 
 crud.Update(p);*/
-Prospecto px = new Prospecto();
+//Prospecto px = new Prospecto();
 
 
 //crud.Add(px);

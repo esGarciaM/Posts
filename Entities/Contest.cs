@@ -12,25 +12,23 @@ namespace Entities
 {
     public class Contest : DbContext ,IContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseSqlServer("server=localhost;database=entrevista;user=sa;password=AFS2018;");
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            options.UseSqlServer("server=localhost;database=FA1;user=sa;password=AFS2018;");
             //options.UseSqlServer("server=108.178.119.50;database=entrevista;user=sa;password=AFS3112.*;");
         }
-        protected override void OnModelCreating(ModelBuilder model) {
-            model.Entity<Post>().HasKey("id");
+        protected override void OnModelCreating(ModelBuilder model)
+        {
             model.Entity<User>().HasKey("id");
-
-            model.Entity<Vacante>().HasKey("id");
-            model.Entity<Prospecto>().HasKey("id");
-            model.Entity<Entrevista>().HasKey("id");
-
+            model.Entity<Client>().HasKey("id");
+            model.Entity<Product>().HasKey("id");
+            model.Entity<Provider>().HasKey("id");
         }
 
-        public DbSet<Vacante> VACANTE { get; set; }
-        public DbSet<Entrevista> ENTREVISTA{ get; set; }
-        public DbSet<Prospecto> PROSPECTO{ get; set; }
-        public DbSet<Post> Posts { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Client> Clients { get; set; }
+        public DbSet<Provider> Providers { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbContext Instance => this;
     }
 }

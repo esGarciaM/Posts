@@ -1,4 +1,5 @@
 ﻿using Entities._Class;
+using Entities._Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Entities._Entities
 {
-    public class Vacante:EntityBase
+    public class Client: EntityCatalog
     {
         //public int vacante { get; set; }
-        public string? area{ get; set; }
-        public decimal? sueldo { get; set; }
-        public bool? activo { get; set; }
+        [Required]
+        public string? razonsocial { get; set; }
+        public string rfc { get; set; }
     }
 }

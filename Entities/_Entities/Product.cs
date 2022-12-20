@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 
 namespace Entities._Entities
 {
-    public class Post:EntityBase
+    public class Product:EntityCatalog
     {
-        [Required]
-        public int userid { get; set; }
-        [StringLength(5)]
-        [Required]
-        public string title { get; set; }
-        public string body { get; set; }
-
+        public int providerid;
+        public virtual Provider provider { get; set; }
     }
 }

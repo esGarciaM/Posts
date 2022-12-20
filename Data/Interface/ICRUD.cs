@@ -1,4 +1,5 @@
 ﻿using Entities._Class;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,11 @@ namespace Data.Interface
     {
         public IEnumerable<T> All();
         public T Get(int id);
-        public void Add(T item);
-        public void Update(T item);
-        public void Delete(int id);
+        public int Add(T item);
+        public bool Update(T item);
+        public bool Delete(int id);
+        IEnumerable<T> getRange(int from, int to);
         public IEnumerable<T> Where(string w);
+        public DbSet<T> GetEntity();
     }
 }
